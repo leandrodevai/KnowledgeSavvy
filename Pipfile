@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain = "*"
+black = "*"
+langchain-tavily = "*"
+langchain-openai = "*"
+langchain-google-genai = "*"
+streamlit = "*"
+sqlalchemy = "*"
+langchain-cohere = "*"
+chromadb = "*"
+langchain-chroma = "*"
+langchain-pinecone = "*"
+certifi = "*"
+pydantic-settings = "*"
+psycopg = {extras = ["binary"], version = "*"}
+langchain-postgres = "*"
+nest-asyncio = "*"
+pytest = "*"
+pytest-mock = "*"
+pytest-cov = "*"
+python-json-logger = "*"
+colorlog = "*"
+langgraph = "*"
+unstructured = {extras = ["all-docs"], version = "*"}
+pypdf = "*"
+isort = "*"
+ruff = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

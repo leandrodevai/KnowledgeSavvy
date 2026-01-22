@@ -13,15 +13,26 @@
 
 ## 🎯 Why KnowledgeSavvy?
 
-Traditional RAG systems retrieve documents and generate answers blindly. **KnowledgeSavvy goes beyond** with:
+Traditional RAG systems retrieve documents and generate answers blindly. **KnowledgeSavvy adds explicit validation steps** with:
 
 - ✅ **Multi-stage validation** that verifies each answer is grounded in your documents
 - ✅ **Hallucination detection** to prevent AI from making up information
 - ✅ **Intelligent grading** that assesses document relevance and answer quality
 - ✅ **Automatic web search** fallback when documents don't contain the answer
-- ✅ **Production-ready architecture** with comprehensive testing and error handling
 
 ## RAG Pipeline Architecture
+
+<p align="center">
+  <img src="RAG_flowchart.png" alt="RLangGraph RAG Workflow" width="1000"/>
+</p>
+
+KnowledgeSavvy follows a validation-first RAG architecture:
+
+1. Retrieve candidate documents
+2. Grade document relevance
+3. Generate an answer from trusted context
+4. Validate grounding and answer quality
+5. Fallback to web search if local knowledge is insufficient
 
 <p align="center">
   <img src="RAG_pipeline.png" alt="RAG Pipeline Architecture" width="800"/>
@@ -245,36 +256,7 @@ Comprehensive documentation for users and developers:
 | **[🧪 Testing Guide](docs/TESTING.md)** | Test suite and best practices |
 | **[🚀 Deployment](docs/DEPLOYMENT.md)** | Installation and configuration |
 
-##  License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Support
-
-**Questions or issues?**
-- 🐛 [Create an issue](https://github.com/leandrodevai/KnowledgeSavvy/issues)
-- 📖 Check the [documentation](docs/README.md)
-- 💬 Review code examples in the codebase
-
-## 👥 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes with tests
-4. Run the test suite (`python -m pytest tests/ -m unit -v`)
-5. Submit a pull request
-
 ---
-
-<p align="center">
-  <strong>Built with ❤️ using Python, LangChain, and LangGraph</strong>
-</p>
-
-<p align="center">
-  <sub>If this project helped you, please consider giving it a ⭐</sub>
-</p>
 
 ## 🎯 What This Project Demonstrates
 
@@ -318,4 +300,34 @@ Most RAG tutorials show basic retrieval + generation. **KnowledgeSavvy implement
 6. **Multiple vector stores** - production-grade abstraction layer
 7. **Flexible LLM models/providers** - easily switch generation and grading models via config
 
+
+##  License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+**Questions or issues?**
+- 🐛 [Create an issue](https://github.com/leandrodevai/KnowledgeSavvy/issues)
+- 📖 Check the [documentation](docs/README.md)
+- 💬 Review code examples in the codebase
+
+## 👥 Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes with tests
+4. Run the test suite (`python -m pytest tests/ -m unit -v`)
+5. Submit a pull request
+
 ---
+
+<p align="center">
+  <strong>Built with ❤️ using Python, LangChain, and LangGraph</strong>
+</p>
+
+<p align="center">
+  <sub>If this project helped you, please consider giving it a ⭐</sub>
+</p>
